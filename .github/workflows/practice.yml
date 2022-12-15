@@ -15,24 +15,24 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  job1:
+  ubuntu:
     runs-on: ubuntu-latest
     steps:
       - name: Print name
         run: echo "$(date)"
-  job2:
+  windows:
     runs-on: windows-latest
     steps:
       - name: Print date
         run: Get-Date
-  job3:
+  macos:
     runs-on: macos-latest
     steps:
       - name: Print date
         run: echo "$(date)"
-  job4:
+  wrapup:
     runs-on: ubuntu-latest
-    needs: [job1, job2, job3]
+    needs: [ubuntu, windows, macos]
     steps:
       - name: print date
         run: echo date
