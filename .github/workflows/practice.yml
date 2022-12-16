@@ -18,6 +18,9 @@ jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
+      - name: List dir
+        run: ls -ltr
+        
       - name: Print name
         run: echo "$(date)"
   windows:
